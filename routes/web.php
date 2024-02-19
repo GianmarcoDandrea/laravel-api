@@ -8,7 +8,6 @@ use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\TechnologyController;
 use App\Http\Controllers\Admin\TrashedController;
 use App\Http\Controllers\Admin\TypeController;
-use App\Models\Technology;
 use Illuminate\Support\Facades\Route;
 
 /*

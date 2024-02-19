@@ -73,7 +73,6 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-
         return view('admin.projects.show', compact('project'));
     }
 
@@ -102,7 +101,6 @@ class ProjectController extends Controller
     public function update(UpdateProjectRequest $request, Project $project)
     {
         $form_data = $request->validated();
-        $project->update($form_data);
 
         if ($request->hasFile('cover_image')) {
             if ($project->cover_image) {
@@ -118,6 +116,8 @@ class ProjectController extends Controller
         } else {
             $project->technologies()->sync([]);
         }
+
+        $project->update($form_data);
 
         return redirect()->route('admin.projects.show', ['project' => $project->slug]);
     }
